@@ -1,13 +1,16 @@
 <?php 
 
-//dichiarare una variabile in PHP da legare al messagio in form
+//salvare in una variabile in PHP l'input di testo
+$badword = $_POST['badword'];
+
+//salvare in una variabile il messaggio in form
 $message = $_POST['message'];
 
 //calcolare il numero dei caratteri del messaggios scritto dall'utente
 $length_message = strlen($message);
 
 //censurare le parole volgari sostituendole con asterischi
-$correct_message = str_replace('cazzo', '***', $message);
+$correct_message = str_replace($badword, '***', $message);
 
 //calcolare di nuovo la lunghezza del messaggio
 $length_correct_message = strlen($correct_message)
